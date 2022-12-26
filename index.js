@@ -6,7 +6,7 @@ import { Configuration, OpenAIApi } from 'openai'
 //app config
 let app=express()
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 });
 const openai = new OpenAIApi(configuration);
 //middleware
@@ -33,9 +33,10 @@ app.post('/',async(req,res)=>{
     res.status(200).send({
       bot: response.data.choices[0].text
     });
-  //  console.log(response.data.choices[0].text)
+    console.log(response.data.choices[0].text)
 
   } catch (e) {
+    res.status(500).send(e)
     console.log(e)
   }
 })
