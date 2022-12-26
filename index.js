@@ -1,12 +1,14 @@
 import express from'express'
 import cors from'cors'
+import * as dotenv from 'dotenv' 
+dotenv.config()
 import { Configuration, OpenAIApi } from 'openai'
 
 
 //app config
 let app=express()
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: process.env.OPEN_API,
 });
 const openai = new OpenAIApi(configuration);
 //middleware
