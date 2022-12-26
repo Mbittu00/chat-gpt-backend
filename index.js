@@ -16,7 +16,7 @@ app.use(express.json())
 app.use(cors())
 //routes
 app.get('/',(req,res)=>{
-  res.send('hello')
+  res.send(process.env.OPEN_API)
 })
 app.post('/',async(req,res)=>{
   try {
